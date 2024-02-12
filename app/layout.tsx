@@ -3,6 +3,9 @@ import './globals.css'
 import { Inter as FontSans } from 'next/font/google'
 
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
+import { Button } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
 
 export const fontSans = FontSans({
   subsets: ['latin'],
@@ -27,6 +30,26 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
+        <header>
+          <div className='container mx-auto flex justify-between py-6'>
+            <Image
+              src='/logo.svg'
+              alt='Image Uploader logo'
+              width={120}
+              height={26}
+            />
+            <Button variant='outline' size='icon'>
+              <Image
+                src='/moon-fill.svg'
+                alt='Dark theme'
+                width={24}
+                height={24}
+              />
+            </Button>
+          </div>
+          <Separator />
+        </header>
+
         {children}
       </body>
     </html>
