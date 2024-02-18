@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
+import { Toaster } from '@/components/ui/sonner'
 
 export const fontSans = FontSans({
   subsets: ['latin'],
@@ -50,7 +51,8 @@ export default function RootLayout({
           <Separator />
         </header>
 
-        {children}
+        <main>{children}</main>
+        <Toaster position='top-right' closeButton />
       </body>
     </html>
   )
