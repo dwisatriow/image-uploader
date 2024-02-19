@@ -1,17 +1,18 @@
 'use client'
 
 import Notification from '@/components/notification'
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Card, CardContent } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
-import { CheckCircledIcon } from '@radix-ui/react-icons'
 import axios from 'axios'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import { useCallback, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 import { toast } from 'sonner'
 
 export default function ImageUploadPage() {
+  const router = useRouter()
+
   // Loader state
   const [isLoading, setIsLoading] = useState(false)
   const [uploadPercentage, setUploadPercentage] = useState(0)
@@ -53,6 +54,10 @@ export default function ImageUploadPage() {
               description='Image uploaded successfully'
             />
           ))
+          // console.log('path', res.data.data.path)
+          const path = res.data.data.path.replace('public/', '')
+          console.log('path', path)
+          router.push(`/image/${path}`)
         } else {
           // If upload failed, show error notif
           toast.custom(() => (
@@ -81,7 +86,7 @@ export default function ImageUploadPage() {
       ))
       resetLoader()
     }
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   // Setup dropzone config
   const { getRootProps, getInputProps } = useDropzone({

@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { Toaster } from '@/components/ui/sonner'
+import Link from 'next/link'
 
 export const fontSans = FontSans({
   subsets: ['latin'],
@@ -33,12 +34,14 @@ export default function RootLayout({
       >
         <header>
           <div className='container mx-auto flex justify-between py-6'>
-            <Image
-              src='/logo.svg'
-              alt='Image Uploader logo'
-              width={120}
-              height={26}
-            />
+            <Link href='/'>
+              <Image
+                src='/logo.svg'
+                alt='Image Uploader logo'
+                width={120}
+                height={26}
+              />
+            </Link>
             <Button variant='outline' size='icon'>
               <Image
                 src='/moon-fill.svg'
