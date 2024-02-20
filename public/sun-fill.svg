@@ -1,11 +1,108 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="12" cy="12" r="4" fill="#F9FAFB" fill-opacity="0.8"/>
-<path d="M12 5V3" stroke="#F9FAFB" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round"/>
-<path d="M12 21V19" stroke="#F9FAFB" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round"/>
-<path d="M16.95 7.04996L18.3643 5.63574" stroke="#F9FAFB" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round"/>
-<path d="M5.63608 18.3644L7.05029 16.9502" stroke="#F9FAFB" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round"/>
-<path d="M19 12L21 12" stroke="#F9FAFB" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round"/>
-<path d="M3 12L5 12" stroke="#F9FAFB" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round"/>
-<path d="M16.95 16.95L18.3643 18.3643" stroke="#F9FAFB" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round"/>
-<path d="M5.63608 5.63559L7.05029 7.0498" stroke="#F9FAFB" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="24"
+   height="24"
+   viewBox="0 0 24 24"
+   fill="none"
+   version="1.1"
+   id="svg3408"
+   sodipodi:docname="sun-fill.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs3412" />
+  <sodipodi:namedview
+     id="namedview3410"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     inkscape:zoom="36"
+     inkscape:cx="12.055556"
+     inkscape:cy="12.041667"
+     inkscape:window-width="1920"
+     inkscape:window-height="1051"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3408" />
+  <circle
+     cx="12"
+     cy="12"
+     r="4"
+     fill="#F9FAFB"
+     fill-opacity="0.8"
+     id="circle3390"
+     style="fill:#f9fafb;fill-opacity:0.80000001" />
+  <path
+     d="M12 5V3"
+     stroke="#F9FAFB"
+     stroke-opacity="0.8"
+     stroke-width="2"
+     stroke-linecap="round"
+     id="path3392"
+     style="stroke:#f9fafb;stroke-opacity:0.80000001" />
+  <path
+     d="M12 21V19"
+     stroke="#F9FAFB"
+     stroke-opacity="0.8"
+     stroke-width="2"
+     stroke-linecap="round"
+     id="path3394"
+     style="stroke:#f9fafb;stroke-opacity:0.80000001" />
+  <path
+     d="M16.95 7.04996L18.3643 5.63574"
+     stroke="#F9FAFB"
+     stroke-opacity="0.8"
+     stroke-width="2"
+     stroke-linecap="round"
+     id="path3396"
+     style="stroke:#f9fafb;stroke-opacity:0.80000001" />
+  <path
+     d="M5.63608 18.3644L7.05029 16.9502"
+     stroke="#F9FAFB"
+     stroke-opacity="0.8"
+     stroke-width="2"
+     stroke-linecap="round"
+     id="path3398"
+     style="stroke:#f9fafb;stroke-opacity:0.80000001" />
+  <path
+     d="M19 12L21 12"
+     stroke="#F9FAFB"
+     stroke-opacity="0.8"
+     stroke-width="2"
+     stroke-linecap="round"
+     id="path3400"
+     style="stroke:#f9fafb;stroke-opacity:0.80000001" />
+  <path
+     d="M3 12L5 12"
+     stroke="#F9FAFB"
+     stroke-opacity="0.8"
+     stroke-width="2"
+     stroke-linecap="round"
+     id="path3402"
+     style="stroke:#f9fafb;stroke-opacity:0.80000001" />
+  <path
+     d="M16.95 16.95L18.3643 18.3643"
+     stroke="#F9FAFB"
+     stroke-opacity="0.8"
+     stroke-width="2"
+     stroke-linecap="round"
+     id="path3404"
+     style="stroke:#f9fafb;stroke-opacity:0.80000001" />
+  <path
+     d="M5.63608 5.63559L7.05029 7.0498"
+     stroke="#F9FAFB"
+     stroke-opacity="0.8"
+     stroke-width="2"
+     stroke-linecap="round"
+     id="path3406"
+     style="stroke:#f9fafb;stroke-opacity:0.80000001" />
 </svg>

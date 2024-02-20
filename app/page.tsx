@@ -16,6 +16,7 @@ export default function ImageUploadPage() {
   // Loader state
   const [isLoading, setIsLoading] = useState(false)
   const [uploadPercentage, setUploadPercentage] = useState(0)
+  const [isRedirecting, setIsRedirecting] = useState(false)
 
   // Reset loader state
   const resetLoader = () => {
@@ -26,7 +27,6 @@ export default function ImageUploadPage() {
   // Callback function to handle file drop
   const onDrop = useCallback(async (acceptedFiles: any) => {
     setIsLoading(true)
-    // console.log('acceptedFiles', acceptedFiles)
 
     // If file selected or dropped
     if (acceptedFiles.length) {
@@ -54,9 +54,9 @@ export default function ImageUploadPage() {
               description='Image uploaded successfully'
             />
           ))
-          // console.log('path', res.data.data.path)
+          setIsRedirecting(true)
+
           const path = res.data.data.path.replace('public/', '')
-          console.log('path', path)
           router.push(`/image/${path}`)
         } else {
           // If upload failed, show error notif
@@ -102,13 +102,13 @@ export default function ImageUploadPage() {
   return (
     <div className='container flex h-[calc(100vh-85px)] items-center justify-center'>
       {/* Card container */}
-      {!isLoading ? (
+      {!isLoading && !isRedirecting ? (
         // Image input
         <Card className='mx-auto grid h-[360px] w-[540px] items-center rounded-lg p-3'>
           {/* Dropzone area */}
           <div
             {...getRootProps()}
-            className='grid h-full cursor-pointer items-center rounded-lg border-2 border-dashed'
+            className='grid h-full cursor-pointer items-center rounded-lg border-2 border-dashed dark:border-secondary'
           >
             {/* Dropzone input */}
             <input {...getInputProps()} />
@@ -132,14 +132,28 @@ export default function ImageUploadPage() {
             </CardContent>
           </div>
         </Card>
-      ) : (
-        // Loading indicator
+      ) : !isRedirecting ? (
+        // Uploading indicator
         <Card className='mx-auto grid h-[140px] w-[540px] items-center rounded-lg p-3'>
           <CardContent className='flex flex-col items-center'>
             <p className='text-center'>
               <span className='font-medium'>Uploading,</span> please wait...
             </p>
             <Progress value={uploadPercentage} className='mt-5' />
+          </CardContent>
+        </Card>
+      ) : (
+        // Loading indicator
+        <Card className='mx-auto grid h-[360px] w-[540px] items-center rounded-lg p-3'>
+          <CardContent className='flex flex-col items-center'>
+            <Image
+              src='/loader.svg'
+              alt='Loading...'
+              width={120}
+              height={120}
+              className='my-auto animate-spin'
+              priority
+            />
           </CardContent>
         </Card>
       )}

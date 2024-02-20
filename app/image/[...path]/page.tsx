@@ -1,9 +1,6 @@
 import ShareButton from '@/components/share-button'
-import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { CheckIcon } from '@radix-ui/react-icons'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
 
 export default async function ImagePage({
   params,
@@ -29,12 +26,11 @@ export default async function ImagePage({
               objectFit: 'cover',
             }}
             fill
-            priority
             className='rounded-lg'
           />
         </CardContent>
       </Card>
-      <ShareButton downloadUrl={src} fileName={fileName} />
+      <ShareButton downloadUrl={src} />
     </div>
   )
 }

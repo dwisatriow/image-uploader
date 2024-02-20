@@ -1,22 +1,16 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-import { Button } from './ui/button'
-import Image from 'next/image'
 import { CheckIcon } from '@radix-ui/react-icons'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
+import { Button } from './ui/button'
 
-export default function ShareButton({
-  downloadUrl,
-  fileName,
-}: {
-  downloadUrl: string
-  fileName: string
-}) {
+export default function ShareButton({ downloadUrl }: { downloadUrl: string }) {
   const pathname = usePathname()
   const [isCopied, setIsCopied] = useState(false)
-  const [isDownloading, setIsDownloading] = useState(false)
 
+  // Notify text copied
   useEffect(() => {
     let timeoutId: NodeJS.Timeout
     if (isCopied) {
@@ -30,6 +24,7 @@ export default function ShareButton({
     }
   }, [isCopied])
 
+  // Copy image url to clipboard
   const copyUrl = async () => {
     try {
       await navigator.clipboard.writeText(
@@ -44,9 +39,10 @@ export default function ShareButton({
 
   return (
     <div className='mt-4 grid grid-cols-2 gap-3'>
+      {/* Share button */}
       <Button
         size='sm'
-        onClick={async () => {
+        onClick={() => {
           if (!isCopied) {
             copyUrl()
           }
@@ -69,6 +65,7 @@ export default function ShareButton({
             Copied
           </>
         )}
+        {/* Download button */}
       </Button>
       <a href={downloadUrl} download>
         <Button size='sm'>

@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
-import './globals.css'
 import { Inter as FontSans } from 'next/font/google'
+import './globals.css'
 
-import { cn } from '@/lib/utils'
-import Image from 'next/image'
-import { Button } from '@/components/ui/button'
+import AppLogo from '@/components/app-logo'
+import ThemeToggle from '@/components/theme-toggle'
+import { ThemeProvider } from '@/components/theme-provider'
 import { Separator } from '@/components/ui/separator'
 import { Toaster } from '@/components/ui/sonner'
-import Link from 'next/link'
+import { cn } from '@/lib/utils'
 
 export const fontSans = FontSans({
   subsets: ['latin'],
@@ -32,30 +32,23 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <header>
-          <div className='container mx-auto flex justify-between py-6'>
-            <Link href='/'>
-              <Image
-                src='/logo.svg'
-                alt='Image Uploader logo'
-                width={120}
-                height={26}
-              />
-            </Link>
-            <Button variant='outline' size='icon'>
-              <Image
-                src='/moon-fill.svg'
-                alt='Dark theme'
-                width={24}
-                height={24}
-              />
-            </Button>
-          </div>
-          <Separator />
-        </header>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='light'
+          enableSystem
+          disableTransitionOnChange
+        >
+          <header>
+            <div className='container mx-auto flex justify-between py-6'>
+              <AppLogo />
+              <ThemeToggle />
+            </div>
+            <Separator />
+          </header>
 
-        <main>{children}</main>
-        <Toaster position='top-right' closeButton />
+          <main>{children}</main>
+          <Toaster position='top-right' closeButton />
+        </ThemeProvider>
       </body>
     </html>
   )
