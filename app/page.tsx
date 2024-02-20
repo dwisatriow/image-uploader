@@ -1,8 +1,8 @@
 'use client'
 
+import Loader from '@/components/loader'
 import Notification from '@/components/notification'
 import { Card, CardContent } from '@/components/ui/card'
-import { Progress } from '@/components/ui/progress'
 import axios from 'axios'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
@@ -15,14 +15,7 @@ export default function ImageUploadPage() {
 
   // Loader state
   const [isLoading, setIsLoading] = useState(false)
-  const [uploadPercentage, setUploadPercentage] = useState(0)
   const [isRedirecting, setIsRedirecting] = useState(false)
-
-  // Reset loader state
-  const resetLoader = () => {
-    setIsLoading(false)
-    setUploadPercentage(0)
-  }
 
   // Callback function to handle file drop
   const onDrop = useCallback(async (acceptedFiles: any) => {
@@ -38,11 +31,6 @@ export default function ImageUploadPage() {
         const res = await axios.post(`/api/images`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
-          },
-          onUploadProgress: function (e) {
-            if (!e.total || !e.loaded) return
-            const percentage = Math.round((100 * e.loaded) / e.total)
-            setUploadPercentage(percentage)
           },
         })
 
@@ -66,7 +54,7 @@ export default function ImageUploadPage() {
               description='An error occured when uploading data'
             />
           ))
-          resetLoader()
+          setIsLoading(false)
         }
       } catch (error) {
         // If upload failed, show error notif
@@ -74,7 +62,7 @@ export default function ImageUploadPage() {
           <Notification type='error' description='Internal server error' />
         ))
       } finally {
-        resetLoader()
+        setIsLoading(false)
       }
     } else {
       // If file not accepted, show warning notif
@@ -84,7 +72,7 @@ export default function ImageUploadPage() {
           description='Please ensure your file is in a supported format and smaller than 2MB'
         />
       ))
-      resetLoader()
+      setIsLoading(false)
     }
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -139,7 +127,7 @@ export default function ImageUploadPage() {
             <p className='text-center'>
               <span className='font-medium'>Uploading,</span> please wait...
             </p>
-            <Progress value={uploadPercentage} className='mt-5' />
+            <Loader />
           </CardContent>
         </Card>
       ) : (
@@ -149,9 +137,9 @@ export default function ImageUploadPage() {
             <Image
               src='/loader.svg'
               alt='Loading...'
-              width={120}
-              height={120}
-              className='my-auto animate-spin'
+              width={60}
+              height={60}
+              className='duration-[1200ms] my-auto animate-spin'
               priority
             />
           </CardContent>
@@ -159,4 +147,6 @@ export default function ImageUploadPage() {
       )}
     </div>
   )
+
+  // return <Loader />
 }
