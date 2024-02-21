@@ -39,7 +39,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <header>
-            <div className='container mx-auto flex justify-between py-6'>
+            <div className='container mx-auto flex items-center justify-between py-6'>
               <AppLogo />
               <ThemeToggle />
             </div>
