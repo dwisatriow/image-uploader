@@ -16,16 +16,14 @@ export default async function ImagePage({
   return (
     <div className='container flex h-[calc(100vh-85px)] flex-col items-center justify-center'>
       {/* Card container */}
-      <Card className='mx-auto grid h-[360px] w-[540px] items-center rounded-lg p-3'>
+      <Card className='mx-auto grid h-[360px] w-full max-w-[540px] items-center rounded-lg p-3'>
         {/* Image preview */}
         <CardContent className='relative flex h-full flex-col items-center'>
           <Image
             src={src}
             alt={fileName}
-            style={{
-              objectFit: 'cover',
-            }}
             fill
+            style={{ objectFit: 'cover' }}
             className='rounded-lg'
           />
         </CardContent>

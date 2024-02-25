@@ -23,6 +23,7 @@ export default function ThemeToggle() {
             width={18}
             height={18}
             className='block dark:hidden'
+            priority
           />
           <Image
             src='/moon-fill.svg'
@@ -30,6 +31,7 @@ export default function ThemeToggle() {
             width={18}
             height={18}
             className='hidden dark:block'
+            priority
           />
           <span className='sr-only'>Toggle theme</span>
         </Button>

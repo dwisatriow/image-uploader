@@ -147,6 +147,4 @@ export default function ImageUploadPage() {
       )}
     </div>
   )
-
-  // return <Loader />
 }

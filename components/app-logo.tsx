@@ -16,6 +16,7 @@ export default function AppLogo() {
           width={120}
           height={26}
           className='block dark:hidden'
+          priority
         />
       </Link>
       <Link href='/'>
@@ -25,6 +26,7 @@ export default function AppLogo() {
           width={120}
           height={26}
           className='hidden dark:block'
+          priority
         />
       </Link>
     </div>
